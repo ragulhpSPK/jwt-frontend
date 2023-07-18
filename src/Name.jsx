@@ -13,7 +13,7 @@ function Name() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        `${process.env.REACT_APP_LOCAL_URL}/api/name`,
+        `https://jwt-backend.vercel.app/api/name`,
         {
           withCredentials: true,
         }
