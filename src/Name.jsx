@@ -31,9 +31,13 @@ function Name() {
   const handleFinish = async () => {
     try {
       const formData = { name: name };
-      await axios.post(`${process.env.REACT_APP_LOCAL_URL}`, formData, {
-        withCredentials: true,
-      });
+      await axios.post(
+        `${process.env.REACT_APP_LOCAL_URL}/api/name`,
+        formData,
+        {
+          withCredentials: true,
+        }
+      );
       notification.success({ message: "create successFully" });
       fetchData();
     } catch (err) {
