@@ -19,13 +19,11 @@ function LoginAndRegister() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  console.log(process.env.REACT_APP_LOCAL_URL, "kwemk");
-
   const handleSubmit = async () => {
     if (login === true) {
       try {
         const result = await axios.post(
-          `https://jwt-frontend-snowy.vercel.app/api/user/login`,
+          `${process.env.REACT_APP_LOCAL_URL}/api/user/login`,
           inputs,
           { withCredentials: true }
         );
@@ -41,7 +39,7 @@ function LoginAndRegister() {
     } else {
       try {
         const result = await axios.post(
-          `https://jwt-frontend-snowy.vercel.app/api/user/register`,
+          `${process.env.REACT_APP_LOCAL_URL}/api/user/register`,
           inputs,
           { withCredentials: true }
         );

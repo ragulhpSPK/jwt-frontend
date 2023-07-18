@@ -9,7 +9,6 @@ function Name() {
   const [data, setData] = useState([]);
   const [name, setName] = useState([]);
   const navigate = useNavigate();
-  const [token, setToken] = useState("");
 
   const fetchData = async () => {
     try {
