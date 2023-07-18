@@ -25,7 +25,7 @@ function LoginAndRegister() {
     if (login === true) {
       try {
         const result = await axios.post(
-          `${process.env.REACT_APP_LOCAL_URL}/api/user/login`,
+          `https://jwt-frontend-snowy.vercel.app/api/user/login`,
           inputs,
           { withCredentials: true }
         );
@@ -36,12 +36,12 @@ function LoginAndRegister() {
         }
       } catch (err) {
         console.log(err);
-        notification.error({ message: "jew" });
+        notification.error({ message: "Invalid User" });
       }
     } else {
       try {
         const result = await axios.post(
-          `${process.env.REACT_APP_LOCAL_URL}/api/user/register`,
+          `https://jwt-frontend-snowy.vercel.app/api/user/register`,
           inputs,
           { withCredentials: true }
         );
